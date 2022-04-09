@@ -16,8 +16,11 @@ jobs:
       - name: build image (docker compose build)
         run: docker compose build --no-cache
       
-      - name: push to docker hub
-        run: docker push ${{secrets.DOCKER_USER}}/docker_node_app
+      - name: push postgres to docker hub
+        run: docker push ${{secrets.DOCKER_USER}}/docker_node_app:postgres
+        
+      - name: push node_rest_api to docker hub
+        run: docker push ${{secrets.DOCKER_USER}}/docker_node_app:node_rest_api
 
 
 #xd
