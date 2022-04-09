@@ -1,6 +1,6 @@
 FROM node:17.8.0-alpine
 
-WORKDIR /usr/app/
+WORKDIR ${DOCKER_NODE_REST_WRKDIR}
 
 #copy code
 #RUN npm install -g npm@8.6.0
