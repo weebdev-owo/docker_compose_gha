@@ -1,5 +1,10 @@
+//ENVIRONMENT VARS-------------------------------------------
 require('dotenv').config()
-const db = {}
+env = { //MOVE VARIABLES TO ENV FILE FOR OPENSOURCE/PRODUCTION
+
+}
+
+//POSTGRES POOL CONNECTIONS -------------------------------------------
 const { Pool } = require('pg')
 pool = new Pool({
     host: process.env.POSTGRESS_HOST, //domain/ip
@@ -15,29 +20,10 @@ pool = new Pool({
 })
 
 
-// db.connect = async (attempts=5, delay=5000) => {
-//     while(attempts){
-//         try{
-//             await db.pool.connect()
-//             break
-//         } 
-//         catch(err){
-//             console.log(err)
-//             attempts -= 1
-//             console.log('attempts left')
-//             //add delay between connection attempts
-//             await new Promise(res => setTimeout(res, delay))
-//         }
-//     }
-
-// }
-
 pool.on('connect', () => {console.log('pool client connection made')})
 pool.on('aqquire', () => {console.log('pool client aquired (checked out from pool)')})
 pool.on('error', (err) => {console.log(`pool client error: ${err}`)})
 
-db.isConnected = async (behaviour) => {
 
-}
-
+//EXPORTS
 module.exports = pool
