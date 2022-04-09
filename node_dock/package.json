@@ -1,0 +1,29 @@
+{
+  "name": "node_dock",
+  "version": "1.0.0",
+  "description": "",
+  "main": "server.js",
+  "scripts": {
+    "test2": "echo \"Error: no test specified\" && exit 1",
+    "start": "node ./src/server.js",
+    "start:dev": "node -r ./src/server.js",
+    "start:watch": "nodemon --legacy-watch ./src/server.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/ryuzakithe3rd/node_dock.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/ryuzakithe3rd/node_dock/issues"
+  },
+  "homepage": "https://github.com/ryuzakithe3rd/node_dock#readme",
+  "dependencies": {
+    "dotenv": "^16.0.0",
+    "express": "^4.17.3",
+    "node": "^16.14.2",
+    "nodemon": "^2.0.15",
+    "pg": "^8.7.3"
+  }
+}

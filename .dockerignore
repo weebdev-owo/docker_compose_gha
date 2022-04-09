@@ -1,0 +1,16 @@
+node_modules
+
+.cache
+
+*.md
+
+.env*
+
+private.key
+
+.git
+.gitignore
+
+Dockerfile
+docker-compose.yml
+.dockerignore
