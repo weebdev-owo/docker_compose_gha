@@ -1,7 +1,9 @@
 version: '3.8'
 
 services:
+  
   postgres:
+    image: weebdevowo/docker_node_app:postgres
     build: ./postgres
     restart: always
     ports:
@@ -16,6 +18,7 @@ services:
   node_rest_api:
     depends_on: 
       - postgres
+    image: weebdevowo/docker_node_app:node_rest_api
     build: ./node_rest_api
     ports: 
       - "5001:8080"

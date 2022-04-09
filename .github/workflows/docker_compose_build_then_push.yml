@@ -1,7 +1,7 @@
-name: Docker Compose Actions Workflow
+name: Docker Compose Actions Workflow (build and push to docker hub)
 on: push
 jobs:
-  test:
+  build_then_push:
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v3
