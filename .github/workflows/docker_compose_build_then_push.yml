@@ -1,0 +1,22 @@
+name: Docker Compose Actions Workflow
+on: push
+jobs:
+  test:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v3
+
+      - name: docker login
+        env:
+          DOCKER_USER: ${{secrets.DOCKER_USER}}
+          DOCKER_PASSWORD: ${{secrets.DOCKER_PASSWORD}}
+        run:
+          docker login -u $DOCKER_USER $DOCKER_PASSWORD
+
+      - name: build image (docker compose build)
+        run: docker compose build --no-cache
+      
+      - name: push to docker hub
+        run: docker push ${{secrets.DOCKER_USER}}/docker_node_app
+
+
